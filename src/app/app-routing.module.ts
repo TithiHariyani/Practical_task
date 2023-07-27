@@ -4,8 +4,10 @@ import { LoginComponent } from './login/login.component';
 import { ClientListComponent } from './client.list/client.list.component';
 
 const routes: Routes = [
-  {path: '', component:LoginComponent},
-  {path: 'client-list', component:ClientListComponent}
+  {path: 'login', component:LoginComponent},
+  {path: 'client-list', component:ClientListComponent},
+  //if user enters an invalid URL.
+  {path: "**", redirectTo: 'login'}
 ];
 
 @NgModule({
