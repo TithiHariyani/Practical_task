@@ -1,61 +1,19 @@
-<p>
-    <mat-toolbar>
-      <span>My Application</span>
-    </mat-toolbar>
-  </p>
-  
-  <p>
-    <mat-toolbar>
-     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-     <mat-icon>share</mat-icon>
-   </button>
-  </mat-toolbar>
-  </p>
-  
-  <p>
-    <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>My App</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
-    </mat-toolbar>
-  </p>
-  
-  <p>
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <span>My App</span>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-          <mat-icon>menu</mat-icon>
-        </button>
-      </mat-toolbar-row>
-  
-      <mat-toolbar-row>
-        <span>Second Line</span>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-          <mat-icon>share</mat-icon>
-        </button>
-      </mat-toolbar-row>
-    </mat-toolbar>
-  </p>
-  
+<div class="mainContainer">
+  <!-- Making a card in css  -->
+  <div class="wrapper" *ngFor="let i of clients.data" >
+    <div class="card">
+      <img src="http://media.npr.org/assets/news/2009/10/27/facebook1_sq-17f6f5e06d5742d8c53576f7c13d5cf7158202a9.jpg?s=16" alt="" />
+      <div id="container">
+        <p id="name">{{i.name}} {{i.last_name}}</p>
+        <p id="exp">DOB : {{i.birth_date}}</p>
+        <p id="email"><a href="mailto:{{i.email}}">{{i.email}}</a></p>
+        <p id="address">Adress : {{i.address}}</p>
+        <p id="phone">Phone : {{i.phone}}</p>
+        <div class="btn">
+          <a href="#" (click)="editClient(i.id,i)" class="button">Edit</a>
+          <a href="#" (click)="removeClient(i.id)" class="button">Delete</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
