@@ -65,6 +65,10 @@
             },
             "development": {
               "browserTarget": "User:build:development"
+            },
+            "options": {
+              "browserTarget": "Practical_task:build",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
