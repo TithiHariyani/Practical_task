@@ -10,6 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginUser: any[] = [];
+  loginObj = {
+    email: '',
+    password: '',
+  };
+
   formGroup !: FormGroup;
   constructor(private authService: AuthServiceService, private router: Router) {}
   ngOnInit() {
@@ -17,7 +23,13 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    this.router.navigate(['/client.list']);
+    // this.router.navigate(['/client.list']);
+    this.authService.onLogin(this.loginObj).subscribe((res: any) => {
+      debugger
+      console.log('res', res);
+      localStorage.setItem('token', res.token);
+      this.router.navigateByUrl('/client-list');
+    })
   }
 
   initForm():any {

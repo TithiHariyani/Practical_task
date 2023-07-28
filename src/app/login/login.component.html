@@ -4,12 +4,12 @@
         <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup" (ngSubmit)="loginProcess()">
             <mat-form-field>
               <!-- <mat-label>Favorite food</mat-label> -->
-              <input matInput placeholder="User Name" formControlName="email">
+              <input matInput placeholder="User Name" formControlName="email" [(ngModel)]="loginObj.email">
             </mat-form-field>
           
             <mat-form-field>
                 <!-- <mat-label>Favorite food</mat-label> -->
-                <input matInput type="password" placeholder="Password" formControlName="password">
+                <input matInput type="password" placeholder="Password" formControlName="password" [(ngModel)]="loginObj.password">
               </mat-form-field>
               <button mat-raised-button type="submit" (click)="onLogin()">Login</button>
           </form>
